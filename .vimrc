@@ -3,6 +3,7 @@ set sw=2
 set ts=2
 set expandtab
 set nocompatible
+set hlsearch
 syntax on
 
 " vundle
