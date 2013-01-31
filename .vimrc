@@ -1,10 +1,18 @@
+execute pathogen#infect()
+
 set nu
 set sw=2
 set ts=2
 set expandtab
 set nocompatible
 set hlsearch
+set background=dark
+set noswapfile
 syntax on
+filetype plugin indent on
+
+au BufNewFile,BufRead *.podspec setf ruby
+au BufNewFile,BufRead Podfile setf ruby
 
 " vundle
 filetype off
@@ -27,3 +35,7 @@ vnoremap <C-R><C-V> :RExtractLocalVariable<cr>
 vnoremap <C-R><C-C> :RExtractConstant<cr>
 vnoremap <C-R><C-R><C-I> :RRenameInstanceVariable<cr>
 vnoremap <C-R><C-R><C-L> :RRenameLocalVariable<cr>
+
+nmap ,f :!clear && rake features<cr>
+nmap gpr :!clear && git pull --rebase<cr>
+nmap ,w :!clear && rake wip<cr>
