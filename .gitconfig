@@ -12,6 +12,8 @@
   pr = pull --rebase
 	puhs = push
   graph = log --graph --date-order -C -M --pretty=format:'<%h> %ad [%an] %Cgreen%d%Creset %s' --all --date=short
+	tfpull = tf pull --rebase
+	tfpush = tf checkin --deep --no-lock
 [color]
 	ui = auto
 [git-pair]
@@ -19,3 +21,5 @@
 	authors = Levi Wilson
 	authors = Dave Shah
 	authors = Jason Felice
+[git-tf "server"]
+  username = teamnorthwoods\\lwilson

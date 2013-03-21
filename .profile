@@ -3,9 +3,10 @@
 #export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
-export ANDROID_HOME=/opt/android
+export ANDROID_HOME=$HOME/android/sdk
 export PATH=$ANDROID_HOME/tools/:$ANDROID_HOME/platform-tools/:$PATH
 export PATH=$HOME/bin:$PATH
+export PATH=/usr/local/git-tf:$PATH
 
 if [ -f `brew --prefix`/etc/autojump.sh ]; then
     . `brew --prefix`/etc/autojump.sh
@@ -13,7 +14,7 @@ fi
   
 
 adb() {
-  /opt/android/platform-tools/adb "$@" | color_highlighter
+  $ANDROID_HOME/platform-tools/adb "$@" | color_highlighter
 }
 
 pair_with_levi() {
