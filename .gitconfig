@@ -14,6 +14,7 @@
   graph = log --graph --date-order -C -M --pretty=format:'<%h> %ad [%an] %Cgreen%d%Creset %s' --all --date=short
 	tfpull = tf pull --rebase
 	tfpush = tf checkin --deep --no-lock
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 [color]
 	ui = auto
 [git-pair]
@@ -23,3 +24,6 @@
 	authors = Jason Felice
 [git-tf "server"]
   username = teamnorthwoods\\lwilson
+[core]
+	autocrlf = input
+	safecrlf = true
