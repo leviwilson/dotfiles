@@ -7,6 +7,7 @@ export ANDROID_HOME=$HOME/android/sdk
 export PATH=$ANDROID_HOME/tools/:$ANDROID_HOME/platform-tools/:$PATH
 export PATH=$HOME/bin:$PATH
 export PATH=/usr/local/git-tf:$PATH
+export PATH=/usr/local/share/python:$PATH
 
 if [ -f `brew --prefix`/etc/autojump.sh ]; then
     . `brew --prefix`/etc/autojump.sh
