@@ -1,5 +1,6 @@
 source ~/.bashrc
 source ~/.profile
+source ~/git-completion.bash
 
 if [ -f `brew --prefix`/etc/bash_completion ]; then
       . `brew --prefix`/etc/bash_completion
