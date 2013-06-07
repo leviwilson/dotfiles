@@ -12,12 +12,13 @@ set incsearch
 set history=1000
 set background=dark
 set noswapfile
-set cursorline
 syntax on
 filetype plugin indent on
 
 au BufNewFile,BufRead *.podspec setf ruby
 au BufNewFile,BufRead Podfile setf ruby
+au BufNewFile,BufRead *.coffee setf javascript
+au BufNewFile,BufRead *.us setf html
 
 " vundle
 " filetype off
