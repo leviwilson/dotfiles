@@ -4,10 +4,11 @@
 # Finished adapting your PATH environment variable for use with MacPorts.
 
 export ANDROID_HOME=$HOME/android/sdk
-export PATH=$ANDROID_HOME/tools/:$ANDROID_HOME/platform-tools/:$PATH
+export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/17.0.0:$PATH
 export PATH=$HOME/bin:$PATH
 export PATH=/usr/local/git-tf:$PATH
 export PATH=/usr/local/share/python:$PATH
+export PATH=/usr/local/share/npm/bin:$PATH
 
 if [ -f `brew --prefix`/etc/autojump.sh ]; then
     . `brew --prefix`/etc/autojump.sh
@@ -20,4 +21,8 @@ adb() {
 
 pair_with_levi() {
   ssh -R1337:localhost:22 -i ~/Downloads/levis_pair.pem ubuntu@"$@"
+}
+
+flush_dns() {
+  sudo killall -HUP mDNSResponder
 }
