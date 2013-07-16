@@ -9,6 +9,7 @@ export PATH=$HOME/bin:$PATH
 export PATH=/usr/local/git-tf:$PATH
 export PATH=/usr/local/share/python:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
+export USE_SIM_LAUNCHER_SERVER=YES
 
 if [ -f `brew --prefix`/etc/autojump.sh ]; then
     . `brew --prefix`/etc/autojump.sh
