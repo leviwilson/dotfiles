@@ -12,6 +12,7 @@ set incsearch
 set history=1000
 set background=dark
 set noswapfile
+set hidden
 syntax on
 filetype plugin indent on
 
