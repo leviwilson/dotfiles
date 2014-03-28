@@ -11,10 +11,11 @@
 	ci = commit
   pr = pull --rebase
 	puhs = push
-  graph = log --graph --date-order -C -M --pretty=format:'<%h> %ad [%an] %Cgreen%d%Creset %s' --all --date=short
+  graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr by %an)%Creset' --abbrev-commit --date=relative
 	tfpull = tf pull --rebase
 	tfpush = tf checkin --deep --no-lock
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	my-bad = blame
 [color]
 	ui = auto
 [git-pair]
@@ -29,3 +30,5 @@
 	safecrlf = true
 [push]
 	default = simple
+[branch]
+	autosetuprebase = always
