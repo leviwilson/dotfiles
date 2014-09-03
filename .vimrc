@@ -13,6 +13,7 @@ set history=1000
 set background=dark
 set noswapfile
 set hidden
+set ruler
 syntax on
 filetype plugin indent on
 
