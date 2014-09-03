@@ -6,6 +6,7 @@
 export ANDROID_HOME=$HOME/android/sdk
 export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/17.0.0:$PATH
 export PATH=$HOME/bin:$PATH
+export PATH=$PATH:/usr/local/sbin
 export PATH=/usr/local/git-tf:$PATH
 export PATH=/usr/local/share/python:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
