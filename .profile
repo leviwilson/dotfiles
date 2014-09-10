@@ -28,3 +28,5 @@ pair_with_levi() {
 flush_dns() {
   sudo killall -HUP mDNSResponder
 }
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
