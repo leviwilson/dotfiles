@@ -1,0 +1,31 @@
+execute pathogen#infect()
+
+set nu
+set ts=2
+set sw=2
+set sts=2
+set expandtab
+set nocompatible
+set hlsearch
+set showmatch
+set incsearch
+set history=1000
+set background=dark
+set noswapfile
+set hidden
+set ruler
+syntax on
+
+colorscheme desert
+set backspace=indent,eol,start
+
+au BufNewFile,BufRead *.scala setf java
+au BufNewFile,BufRead *.cshtml setf html
+
+filetype plugin indent on
+autocmd FileType html setlocal sw=4 ts=4
+autocmd FileType python setlocal sw=4 sts=4
+autocmd FileType ruby setlocal sw=2 sts=2
+autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
+autocmd Filetype cpp setlocal ts=4 sts=4 sw=4
+
