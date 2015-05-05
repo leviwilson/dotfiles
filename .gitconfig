@@ -5,11 +5,12 @@
 	name = Levi Wilson
 	email = levi@leviwilson.com
 [alias]
+  refresh = "!git fetch upstream && git merge upstream/master"
   put = push origin head
 	co = checkout
 	st = status
 	ci = commit
-  pr = pull --rebase
+  pr = pull --rebase -p
 	puhs = push
   graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr by %an)%Creset' --abbrev-commit --date=relative
 	tfpull = tf pull --rebase

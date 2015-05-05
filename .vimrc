@@ -22,6 +22,12 @@ au BufNewFile,BufRead Podfile setf ruby
 au BufNewFile,BufRead *.coffee setf javascript
 au BufNewFile,BufRead *.us setf html
 
+autocmd FileType html setlocal sw=4 ts=4
+autocmd FileType python setlocal sw=4 sts=4
+autocmd FileType ruby setlocal sw=2 sts=2
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+autocmd Filetype cpp setlocal ts=4 sts=4 sw=4
+
 " vundle
 " filetype off
 " set rtp+=~/.vim/bundle/vundle/
