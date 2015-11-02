@@ -14,6 +14,9 @@ export USE_SIM_LAUNCHER_SERVER=YES
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export GREP_OPTIONS="--color=auto"
 export PATH=/usr/local/bin:$PATH:/opt/android/tools:/opt/android/platform-tools
+export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.7.4.0
+export PATH=$PATH:$EC2_HOME/bin
+export JAVA_HOME=$(/usr/libexec/java_home)
 
 stty -ixon -ixoff
 
