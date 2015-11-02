@@ -50,7 +50,18 @@ vnoremap <C-R><C-C> :RExtractConstant<cr>
 vnoremap <C-R><C-R><C-I> :RRenameInstanceVariable<cr>
 vnoremap <C-R><C-R><C-L> :RRenameLocalVariable<cr>
 
+" seeing-is-believing
+nmap <buffer> <F5> <Plug>(seeing-is-believing-run)
+xmap <buffer> <F5> <Plug>(seeing-is-believing-run)
+imap <buffer> <F5> <Plug>(seeing-is-believing-run)
+
+nmap <buffer> <F4> <Plug>(seeing-is-believing-mark)
+xmap <buffer> <F4> <Plug>(seeing-is-believing-mark)
+imap <buffer> <F4> <Plug>(seeing-is-believing-mark)
+
 nmap ,f :!clear && rake features<cr>
 nmap gpr :!clear && git pull --rebase<cr>
 nmap ,w :!clear && rake wip<cr>
 nmap ,t :!clear && rake<cr>
+nmap ,ri :!clear && bundle exec irb --noprompt -r ./%<cr>
+nmap ,ru :!clear && bundle exec rackup<cr>
