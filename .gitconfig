@@ -17,6 +17,7 @@
 	tfpush = tf checkin --deep --no-lock
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	my-bad = blame
+	ds = diff --staged
 [color]
 	ui = auto
 [git-pair]
