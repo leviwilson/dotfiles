@@ -60,3 +60,7 @@ flush_dns() {
   sudo killall -HUP mDNSResponder
 }
 
+fix_camera() {
+  sudo killall VDCAssistant
+}
+
