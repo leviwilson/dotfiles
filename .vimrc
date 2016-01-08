@@ -59,9 +59,23 @@ nmap <buffer> <F4> <Plug>(seeing-is-believing-mark)
 xmap <buffer> <F4> <Plug>(seeing-is-believing-mark)
 imap <buffer> <F4> <Plug>(seeing-is-believing-mark)
 
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor\ --hidden
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l -i --files-with-matches --nocolor --nogroup  -g "" --ignore "./docs/api"'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
 nmap ,f :!clear && rake features<cr>
 nmap gpr :!clear && git pull --rebase<cr>
 nmap ,w :!clear && rake wip<cr>
-nmap ,t :!clear && rake<cr>
+nmap ,t :!clear && bundle exec rake spec<cr>
+nmap ,rt :!clear && spring rake spec<cr>
 nmap ,ri :!clear && bundle exec irb --noprompt -r ./%<cr>
 nmap ,ru :!clear && bundle exec rackup<cr>
+nmap ,rs :!clear && spring rails s<cr>
+nmap ,b :!clear && bundle<cr>
