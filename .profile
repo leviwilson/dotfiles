@@ -64,3 +64,9 @@ fix_camera() {
   sudo killall VDCAssistant
 }
 
+pid4portfn() {
+  lsof -n -ti tcp:$1
+}
+
+alias pid4port=pid4portfn
+

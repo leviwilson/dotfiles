@@ -72,7 +72,7 @@ endif
 
 nmap ,f :!clear && rake features<cr>
 nmap gpr :!clear && git pull --rebase<cr>
-nmap ,w :!clear && rake wip<cr>
+nmap ,w :!clear && rake bundle exec cucumber --tags @wip<cr>
 nmap ,t :!clear && bundle exec rake spec<cr>
 nmap ,rt :!clear && spring rake spec<cr>
 nmap ,ri :!clear && bundle exec irb --noprompt -r ./%<cr>
