@@ -22,11 +22,20 @@ au BufNewFile,BufRead Podfile setf ruby
 au BufNewFile,BufRead *.coffee setf javascript
 au BufNewFile,BufRead *.us setf html
 
-autocmd FileType html setlocal sw=4 ts=4
+autocmd FileType html setlocal sw=2 ts=2
 autocmd FileType python setlocal sw=4 sts=4
 autocmd FileType ruby setlocal sw=2 sts=2
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype cpp setlocal ts=4 sts=4 sw=4
+
+" ====[ Make tabs, trailing whitespace, and non-breaking spaces visible ]======
+exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
+set list
+
+highlight ExtraWhitespace ctermbg=green guibg=green
+match ExtraWhitespace /\s\+$/
+
+" let test#strategy = "iterm"
 
 " vundle
 " filetype off
@@ -70,12 +79,26 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
+let mapleader = ","
+vmap <leader>c <esc>:'<,'>:CoffeeCompile<cr>
+map <leader>c :CoffeeCompile<cr>
+
 nmap ,f :!clear && rake features<cr>
 nmap gpr :!clear && git pull --rebase<cr>
 nmap ,w :!clear && rake bundle exec cucumber --tags @wip<cr>
-nmap ,t :!clear && bundle exec rake spec<cr>
 nmap ,rt :!clear && spring rake spec<cr>
 nmap ,ri :!clear && bundle exec irb --noprompt -r ./%<cr>
 nmap ,ru :!clear && bundle exec rackup<cr>
 nmap ,rs :!clear && spring rails s<cr>
+nmap ,rc :!clear && spring rails c<cr>
 nmap ,b :!clear && bundle<cr>
+nmap ,cc :CoffeeCompile<cr>
+
+nmap <S-Up> :cprevious<CR>
+nmap <S-Down> :cnext<CR>
+
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
