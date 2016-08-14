@@ -17,6 +17,7 @@ export PATH=/usr/local/bin:$PATH:/opt/android/tools:/opt/android/platform-tools
 export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.7.4.0
 export PATH=$PATH:$EC2_HOME/bin
 export JAVA_HOME=$(/usr/libexec/java_home)
+export BUNDLER_EDITOR=vim
 
 stty -ixon -ixoff
 
@@ -29,7 +30,7 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
-export PS1="🍺  \u@\h \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
+export PS1="\`if [ \$? = 0 ]; then echo 👍 ; else echo 💥 ; fi\`\n\u@\h \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 # added by travis gem
 [ -f /Users/lwilson/.travis/travis.sh ] && source /Users/lwilson/.travis/travis.sh
@@ -64,9 +65,14 @@ fix_camera() {
   sudo killall VDCAssistant
 }
 
+fix_screenhero() {
+  pgrep Screenhero | xargs kill -9
+  sleep 1
+  open /Applications/Screenhero.app
+}
+
 pid4portfn() {
   lsof -n -ti tcp:$1
 }
 
 alias pid4port=pid4portfn
-
