@@ -26,7 +26,7 @@ autocmd FileType html setlocal sw=2 ts=2
 autocmd FileType python setlocal sw=4 sts=4
 autocmd FileType ruby setlocal sw=2 sts=2
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
-autocmd Filetype cpp setlocal ts=4 sts=4 sw=4
+autocmd Filetype cpp setlocal ts=2 sts=2 sw=2
 
 " ====[ Make tabs, trailing whitespace, and non-breaking spaces visible ]======
 exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
