@@ -9,6 +9,7 @@ export PATH=$PATH:$HOME/bin
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export GREP_OPTIONS="--color=auto"
 export BUNDLER_EDITOR=vim
+export EDITOR='vim'
 
 stty -ixon -ixoff
 
@@ -36,10 +37,6 @@ if [ -f `brew --prefix`/etc/autojump.sh ]; then
     . `brew --prefix`/etc/autojump.sh
 fi
 
-adb() {
-  $ANDROID_HOME/platform-tools/adb "$@" | color_highlighter
-}
-
 flush_dns() {
   sudo killall -HUP mDNSResponder
 }
@@ -52,6 +49,10 @@ fix_screenhero() {
   pgrep Screenhero | xargs kill -9
   sleep 1
   open /Applications/Screenhero.app
+}
+
+docker_remove_containers() {
+  docker rm $(docker ps -a -q)
 }
 
 pid4portfn() {
