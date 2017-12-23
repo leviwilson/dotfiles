@@ -8,7 +8,7 @@
   refresh = "!git fetch upstream && git merge upstream/master"
   put = push origin head
 	co = checkout
-	st = status
+	st = status -sb
 	ci = commit
   pr = pull --rebase -p
 	puhs = push

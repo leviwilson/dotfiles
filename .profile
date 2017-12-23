@@ -19,7 +19,7 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
-export PS1="\`if [ \$? = 0 ]; then echo 👍 ; else echo 💥 ; fi\`\n\u@\h \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
+export PS1="\`if [ \$? = 0 ]; then echo 👍 ; else echo 💥 ; fi\`\n$ \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 # added by travis gem
 [ -f /Users/lwilson/.travis/travis.sh ] && source /Users/lwilson/.travis/travis.sh
@@ -59,4 +59,5 @@ pid4portfn() {
   lsof -n -ti tcp:$1
 }
 
+alias be="bundle exec "
 alias pid4port=pid4portfn
